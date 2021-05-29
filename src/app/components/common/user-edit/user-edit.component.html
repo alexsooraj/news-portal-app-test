@@ -1,0 +1,22 @@
+<div class="editor-container">
+    <mat-card>
+        <h4>{{user?'Your Profile': 'User Registration'}}</h4>
+        <form ngNativeValidate (ngSubmit)="saveChanges()">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input [disabled]="user!==undefined" required name="npa-email" matInput
+                    placeholder="someone@example.com" type="email" [(ngModel)]="email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input required name="npa-password" matInput type="password" [(ngModel)]="password">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Display Name</mat-label>
+                <input required name="npa-name" matInput placeholder="Eg: Alex" type="text" [(ngModel)]="name">
+            </mat-form-field>
+            <button type="submit" mat-raised-button>{{user===undefined?'Create User': 'Save Details'}}</button>
+            <div *ngIf="user===undefined" class="footer-links"><a routerLink="/login">&lt; Login</a></div>
+        </form>
+    </mat-card>
+</div>

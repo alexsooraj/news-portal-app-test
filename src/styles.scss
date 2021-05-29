@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a:-webkit-any-link {
+    color: initial;
+    cursor: pointer;
+    text-decoration: initial;
+}
+
+.editor-container {
+    display: flex;
+    padding-top: 60px;
+    justify-content: center;
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    mat-card {
+        width: 300px;
+    }
+}

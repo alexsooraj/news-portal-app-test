@@ -1,0 +1,14 @@
+<div class="section-container">
+    <div class="list-items">
+        <mat-selection-list (selectionChange)="selectionChange()" [(ngModel)]="selectedSections" #selectedList>
+            <div mat-subheader>Sections</div>
+            <mat-list-option *ngFor="let section of sections" [value]="section">
+                {{section.display_name}}
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+
+    <div class="button-container">
+        <button (click)="clearSelection()" mat-raised-button [disabled]="selectedSections.length===0">Clear {{selectedSections.length>0?' ('+selectedSections.length+')': ''}}</button>
+    </div>
+</div>

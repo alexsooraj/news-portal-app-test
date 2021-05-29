@@ -1,0 +1,14 @@
+<mat-toolbar class="position-fixed">
+    <span style="cursor: pointer;" (click)="gotoHome()">News Portal App</span>
+    <span class="header-spacer"></span>
+    <span *ngIf="currentUser">Hello, {{currentUser.name}}</span>
+    <button *ngIf="currentUser" mat-icon-button title="User settings" (click)="gotoUserSettings()">
+        <mat-icon>manage_accounts</mat-icon>
+    </button>
+    <button *ngIf="currentUser" (click)="logout()" mat-icon-button title="Logout">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+<div class="main-content">
+    <router-outlet></router-outlet>
+</div>

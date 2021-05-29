@@ -1,0 +1,9 @@
+<div class="paginator-container">
+    <button (click)="prev()" mat-icon-button [disabled]="pageNumber===1">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <div>Showing {{(pageNumber*limit)-limit+1}} - {{getAvailableMax()}} of {{max}}</div>
+    <button (click)="next()" mat-icon-button [disabled]="getAvailableMax()>=max">
+        <mat-icon>arrow_forward</mat-icon>
+    </button>
+</div>

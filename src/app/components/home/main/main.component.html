@@ -1,0 +1,41 @@
+<div *ngIf="loading" class="mat-progress-bar-wrap">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="main-container">
+    <div *ngIf="loading" class="main-overlay"></div>
+    <div class="paginator-container">
+        <app-paginator (pageNumberChanged)="pageNumberChanged($event)" [pageNumber]="page" [limit]="limit"
+            [max]="totalResults"></app-paginator>
+    </div>
+
+    
+    <div *ngIf="selectedSections.length>0">
+        <h3>Showing filtered results</h3>
+        <div *ngIf="(articles|filterBySection: selectedSections).length===0" style="text-align: center; color: grey;">
+            No results matching the filter item(s)
+        </div>
+    </div>
+
+    <div class="news-container">
+        <div class="news-item" *ngFor="let article of articles|filterBySection: selectedSections">
+            <mat-card class="example-card">
+                <a [href]="article.url" target="_blank">
+                    <img mat-card-image [src]="getImage(article.multimedia)">
+                    <mat-card-content>
+                        <h4>{{article.title}}</h4>
+                        <p>
+                            {{article.abstract}}
+                        </p>
+                    </mat-card-content>
+                </a>
+            </mat-card>
+        </div>
+        <div *ngIf="articles.length===0">No data found</div>
+    </div>
+
+    <div *ngIf="!loading" class="paginator-container">
+        <app-paginator (pageNumberChanged)="pageNumberChanged($event)" [pageNumber]="page" [limit]="limit"
+            [max]="totalResults"></app-paginator>
+    </div>
+</div>

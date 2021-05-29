@@ -1,0 +1,18 @@
+<div class="editor-container">
+    <mat-card>
+        <h4>User Login - News Portal App</h4>
+        <form ngNativeValidate (ngSubmit)="login()">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input required name="npa-email" matInput placeholder="someone@example.com" type="email"
+                    [(ngModel)]="email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input required name="npa-password" matInput type="password" [(ngModel)]="password">
+            </mat-form-field>
+            <button type="submit" mat-raised-button>Login</button>
+            <div class="footer-links"><a routerLink="/registration">User Registration &gt;</a></div>
+        </form>
+    </mat-card>
+</div>

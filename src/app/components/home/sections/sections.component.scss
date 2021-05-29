@@ -1,0 +1,17 @@
+.section-container {
+    max-height: calc(100vh - 64px);
+    display: flex; flex-direction: column;
+    min-width: 220px;
+    .heading {
+        padding: 10px;
+    }
+    .list-items {
+        overflow-y: auto;
+    }
+    .button-container {
+        padding: 10px;
+        button {
+            width: 100%;
+        }
+    }
+}

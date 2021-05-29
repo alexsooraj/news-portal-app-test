@@ -1,0 +1,50 @@
+:host {
+    flex: 1;
+}
+.main-container {
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding : 20px;
+    position: relative;
+
+    .news-container {
+        display              : grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+
+        @media screen and (max-width: 992px) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        gap     : 10px;
+
+        mat-card {
+            width     : 100%;
+            height    : 100%;
+            box-sizing: border-box;
+        }
+    }
+
+    .paginator-container {
+        display        : flex;
+        justify-content: flex-end;
+    }
+
+    .main-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 100;
+        background-color: white;
+        opacity: 0.5;
+    }
+}
+
+.mat-progress-bar-wrap {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
